@@ -1,0 +1,15 @@
+*** gdal/GdalPINVOKE.cs	2014-12-04 12:14:10.000000000 +0100
+--- gdal/GdalPINVOKE.cs.patched	2014-12-04 12:33:59.000000000 +0100
+*************** class GdalPINVOKE {
+*** 189,198 ****
+    }
+  
+  
+-   static GdalPINVOKE() {
+-   }
+- 
+- 
+    [DllImport("gdal_wrap", EntryPoint="CSharp_UseExceptions")]
+    public static extern void UseExceptions();
+  
+--- 189,194 ----

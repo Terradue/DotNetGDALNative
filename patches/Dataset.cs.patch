@@ -1,0 +1,19 @@
+*** gdal/Dataset.cs	2014-12-04 12:14:10.000000000 +0100
+--- gdal/Dataset.cs.patched	2014-12-04 13:33:24.000000000 +0100
+*************** using System.Runtime.InteropServices;
+*** 14,20 ****
+  public class Dataset : MajorObject {
+    private HandleRef swigCPtr;
+  
+!   public Dataset(IntPtr cPtr, bool cMemoryOwn, object parent) : base(GdalPINVOKE.DatasetUpcast(cPtr), cMemoryOwn, parent) {
+      swigCPtr = new HandleRef(this, cPtr);
+    }
+  
+--- 14,20 ----
+  public class Dataset : MajorObject {
+    private HandleRef swigCPtr;
+  
+!   public Dataset(IntPtr cPtr, bool cMemoryOwn, object parent) : base(GdalPINVOKE.Dataset_SWIGUpcast(cPtr), cMemoryOwn, parent) {
+      swigCPtr = new HandleRef(this, cPtr);
+    }
+  

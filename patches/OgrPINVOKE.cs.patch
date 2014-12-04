@@ -1,0 +1,15 @@
+*** ogr/OgrPINVOKE.cs	2014-12-04 12:14:11.000000000 +0100
+--- ogr/OgrPINVOKE.cs.patched	2014-12-04 12:31:37.000000000 +0100
+*************** class OgrPINVOKE {
+*** 189,198 ****
+    }
+  
+  
+-   static OgrPINVOKE() {
+-   }
+- 
+- 
+    [DllImport("ogr_wrap", EntryPoint="CSharp_wkb25DBit_get")]
+    public static extern int wkb25DBit_get();
+  
+--- 189,194 ----

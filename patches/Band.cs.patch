@@ -1,0 +1,19 @@
+*** gdal/Band.cs	2014-12-04 12:14:10.000000000 +0100
+--- gdal/Band.cs.patched	2014-12-04 13:33:07.000000000 +0100
+*************** using System.Runtime.InteropServices;
+*** 14,20 ****
+  public class Band : MajorObject {
+    private HandleRef swigCPtr;
+  
+!   public Band(IntPtr cPtr, bool cMemoryOwn, object parent) : base(GdalPINVOKE.BandUpcast(cPtr), cMemoryOwn, parent) {
+      swigCPtr = new HandleRef(this, cPtr);
+    }
+  
+--- 14,20 ----
+  public class Band : MajorObject {
+    private HandleRef swigCPtr;
+  
+!   public Band(IntPtr cPtr, bool cMemoryOwn, object parent) : base(GdalPINVOKE.Band_SWIGUpcast(cPtr), cMemoryOwn, parent) {
+      swigCPtr = new HandleRef(this, cPtr);
+    }
+  

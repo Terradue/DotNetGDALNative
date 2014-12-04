@@ -126,7 +126,36 @@
 			        </configuration>
 		          </execution>
 		          <execution>
-		          	<id>make-csharp</id>
+		          	<id>make-generate-csharp</id>
+					<phase>compile</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>make</executable>
+			          <arguments>
+			          	<argument>generate</argument>
+			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>patch-csharp</id>
+					<phase>compile</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>${basedir}/patches/patch.sh</executable>
+			          <arguments>
+			          	<argument>${basedir}/patches</argument>
+			          	<argument>${project.build.directory}/gdal/swig/csharp</argument>
+			          </arguments>
+			          <workingDirectory>${basedir}</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>make-compile-csharp</id>
 					<phase>compile</phase>
 		            <goals>
 		              <goal>exec</goal>
