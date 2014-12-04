@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Terradue.GDAL.Native</id>
+    <version>${project.version}</version>
+    <title>Terradue.GDAL.Native</title>
+    <authors>Terradue</authors>
+    <projectUrl>https://github.com/Terradue/DotNetGDALNative</projectUrl>
+    <licenseUrl>https://github.com/Terradue/DotNetGDALNative/blob/master/LICENSE</licenseUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model to the calling application for all supported formats. Terradue.GDAL.Native provides library</description>
+    <summary>OpenNebula library for .Net</summary>
+  </metadata>
+  <files>
+  	<file src="share" target="content/" />
+  	<file src="data" target="content/" />
+    <file src="gdal/swig/csharp/*.dll" target="lib/net40/" />
+    <file src="../Terradue.GDAL.Native/bin/Terradue.GDAL.Native.dll" target="lib/net40/Terradue.GDAL.Native.dll" />
+    <file src="gdal/swig/csharp/*.so" target="lib/${DYNAMIC.CBUILDPROP.OS}/${DYNAMIC.CBUILDPROP.ARCH}/" />
+    <file src="gdal/swig/csharp/*.a" target="lib/${DYNAMIC.CBUILDPROP.OS}/${DYNAMIC.CBUILDPROP.ARCH}/" />
+    <file src="gdal/swig/csharp/*.la" target="lib/${DYNAMIC.CBUILDPROP.OS}/${DYNAMIC.CBUILDPROP.ARCH}/" />
+  </files>
+
+</package>
