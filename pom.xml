@@ -175,6 +175,21 @@
 			        </configuration>
 		          </execution>
 		          <execution>
+		          	<id>copy-dlls</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>cp</executable>
+			          <arguments>
+			          	<argument>-pr</argument>
+			          	<argument>${basedir}/Terradue.GDAL.Native/bin</argument>
+			          	<argument>${project.build.directory}/bin</argument>
+			          </arguments>
+			        </configuration>
+		          </execution>
+		          <execution>
 		          	<id>nuget-pack</id>
 					<phase>package</phase>
 		            <goals>
