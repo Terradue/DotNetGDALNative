@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
-    <id>Terradue.GDAL.Native</id>
+    <id>Terradue.GDAL.Native.${DYNAMIC.CBUILDPROP.OS}.${DYNAMIC.CBUILDPROP.ARCH}</id>
     <version>${project.version}</version>
     <title>Terradue.GDAL.Native</title>
     <authors>Terradue</authors>
