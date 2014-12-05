@@ -3,20 +3,21 @@
   <metadata>
     <id>Terradue.GDAL.Native.${DYNAMIC.CBUILDPROP.OS}.${DYNAMIC.CBUILDPROP.ARCH}</id>
     <version>${project.version}</version>
-    <title>Terradue.GDAL.Native</title>
+    <title>Terradue.GDAL.Native.${DYNAMIC.CBUILDPROP.OS}.${DYNAMIC.CBUILDPROP.ARCH}</title>
     <authors>Terradue</authors>
     <projectUrl>https://github.com/Terradue/DotNetGDALNative</projectUrl>
     <licenseUrl>https://github.com/Terradue/DotNetGDALNative/blob/master/LICENSE</licenseUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model to the calling application for all supported formats. Terradue.GDAL.Native provides library</description>
+    <description>GDAL is a translator library for raster geospatial data formats that is released under an X/MIT style Open Source license by the Open Source Geospatial Foundation. As a library, it presents a single abstract data model to the calling application for all supported formats. Terradue.GDAL.Native.${DYNAMIC.CBUILDPROP.OS}.${DYNAMIC.CBUILDPROP.ARCH} provides library with specific native interop for ${DYNAMIC.CBUILDPROP.OS} platforms and ${DYNAMIC.CBUILDPROP.ARCH} architecture.</description>
     <summary>OpenNebula library for .Net</summary>
   </metadata>
   <files>
     <file src="gdal/swig/csharp/*.dll" target="lib/net40/" />
-    <file src="../Terradue.GDAL.Native/bin/Terradue.GDAL.Native.dll" target="lib/net40/Terradue.GDAL.Native.dll" />
+    <file src="${basedir}/Terradue.GDAL.Native/bin/Terradue.GDAL.Native.dll" target="lib/net40/Terradue.GDAL.Native.dll" />
     <file src="gdal/swig/csharp/*.so" target="lib/net40/" />
     <file src="gdal/swig/csharp/*.a" target="lib/net40/" />
     <file src="gdal/swig/csharp/*.la" target="lib/net40/" />
+    <file src="gdal/swig/csharp/*.lo" target="lib/net40/" />
   </files>
 
 </package>
