@@ -33,16 +33,16 @@
       <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
     </Reference>
     <Reference Include="gdal_csharp">
-      <HintPath>..\packages\Terradue.GDAL.Native.el6.x86_64.1.11.1\lib\net40\gdal_csharp.dll</HintPath>
+      <HintPath>..\target\gdal\swig\csharp\gdal_csharp.dll</HintPath>
     </Reference>
     <Reference Include="gdalconst_csharp">
-      <HintPath>..\packages\Terradue.GDAL.Native.el6.x86_64.1.11.1\lib\net40\gdalconst_csharp.dll</HintPath>
+      <HintPath>..\target\gdal\swig\csharp\gdalconst_csharp.dll</HintPath>
     </Reference>
     <Reference Include="ogr_csharp">
-      <HintPath>..\packages\Terradue.GDAL.Native.el6.x86_64.1.11.1\lib\net40\ogr_csharp.dll</HintPath>
+      <HintPath>..\target\gdal\swig\csharp\ogr_csharp.dll</HintPath>
     </Reference>
     <Reference Include="osr_csharp">
-      <HintPath>..\packages\Terradue.GDAL.Native.el6.x86_64.1.11.1\lib\net40\osr_csharp.dll</HintPath>
+      <HintPath>..\target\gdal\swig\csharp\osr_csharp.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -52,5 +52,11 @@
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Terradue.GDAL.Native\Terradue.GDAL.Native.csproj">
+      <Project>{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}</Project>
+      <Name>Terradue.GDAL.Native</Name>
+    </ProjectReference>
   </ItemGroup>
 </Project>
