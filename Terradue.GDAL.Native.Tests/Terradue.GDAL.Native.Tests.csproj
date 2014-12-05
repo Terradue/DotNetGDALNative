@@ -3,17 +3,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}</ProjectGuid>
+    <ProjectGuid>{7519AADD-07F3-47EE-A258-1A3DF39FD7A3}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Terradue.GDAL.Native</RootNamespace>
-    <AssemblyName>Terradue.GDAL.Native</AssemblyName>
+    <RootNamespace>Terradue.GDAL.Native.Tests</RootNamespace>
+    <AssemblyName>Terradue.GDAL.Native.Tests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>bin</OutputPath>
+    <OutputPath>bin\Debug</OutputPath>
     <DefineConstants>DEBUG;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -22,29 +22,41 @@
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>full</DebugType>
     <Optimize>true</Optimize>
-    <OutputPath>bin</OutputPath>
+    <OutputPath>bin\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <ConsolePause>false</ConsolePause>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="nunit.framework">
+      <HintPath>..\packages\NUnit.2.6.3\lib\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="gdal_csharp">
+      <HintPath>..\target\gdal\swig\csharp\gdal_csharp.dll</HintPath>
+    </Reference>
+    <Reference Include="gdalconst_csharp">
+      <HintPath>..\target\gdal\swig\csharp\gdalconst_csharp.dll</HintPath>
+    </Reference>
     <Reference Include="ogr_csharp">
       <HintPath>..\target\gdal\swig\csharp\ogr_csharp.dll</HintPath>
     </Reference>
     <Reference Include="osr_csharp">
       <HintPath>..\target\gdal\swig\csharp\osr_csharp.dll</HintPath>
     </Reference>
-    <Reference Include="gdalconst_csharp">
-      <HintPath>..\target\gdal\swig\csharp\gdalconst_csharp.dll</HintPath>
-    </Reference>
-    <Reference Include="gdal_csharp">
-      <HintPath>..\target\gdal\swig\csharp\gdal_csharp.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="GdalConfiguration.cs" />
+    <Compile Include="Test.cs" />
+    <Compile Include="GDALInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Terradue.GDAL.Native\Terradue.GDAL.Native.csproj">
+      <Project>{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}</Project>
+      <Name>Terradue.GDAL.Native</Name>
+    </ProjectReference>
+  </ItemGroup>
 </Project>
