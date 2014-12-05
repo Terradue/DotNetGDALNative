@@ -82,8 +82,6 @@
 			          <arguments>
 			          	<argument>-pr</argument>
 			          	<argument>${basedir}/gdal/gdal</argument>
-			          	<argument>${basedir}/share</argument>
-			          	<argument>${basedir}/data</argument>
 			          	<argument>${project.build.directory}/</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}</workingDirectory>
