@@ -13,7 +13,7 @@
   </metadata>
   <files>
     <file src="gdal/swig/csharp/*.dll" target="lib/net40/" />
-    <file src="${basedir}/Terradue.GDAL.Native/bin/Terradue.GDAL.Native.dll" target="lib/net40/Terradue.GDAL.Native.dll" />
+    <file src="bin/Terradue.GDAL.Native.dll" target="lib/net40/Terradue.GDAL.Native.dll" />
     <file src="gdal/swig/csharp/*.so" target="lib/net40/" />
     <file src="gdal/swig/csharp/*.a" target="lib/net40/" />
     <file src="gdal/swig/csharp/*.la" target="lib/net40/" />
