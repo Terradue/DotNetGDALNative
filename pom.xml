@@ -78,9 +78,7 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
-		            	<environmentVariables>
-					  <CPPFLAGS>/usr/include/libgeotiff/</CPPFLAGS>
-					  </environmentVariables>
+		            	
 			          <executable>cp</executable>
 			          <arguments>
 			          	<argument>-pr</argument>
@@ -97,6 +95,9 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
+		            	<environmentVariables>
+					  <CPPFLAGS>/usr/include/libgeotiff/</CPPFLAGS>
+					  </environmentVariables>
 			          <executable>./configure</executable>
 			          <arguments>
 			          	<argument>--prefix=${project.build.directory}/staged</argument>
@@ -111,6 +112,9 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
+		            	<environmentVariables>
+					  <CPPFLAGS>/usr/include/libgeotiff/</CPPFLAGS>
+					  </environmentVariables>
 			          <executable>make</executable>
 			          <workingDirectory>${project.build.directory}/gdal</workingDirectory>
 			        </configuration>
