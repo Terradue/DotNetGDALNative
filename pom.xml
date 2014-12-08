@@ -96,7 +96,7 @@
 		            </goals>
 		            <configuration>
 		            	<environmentVariables>
-					  <CPPFLAGS>/usr/include/libgeotiff/</CPPFLAGS>
+					  <CPPFLAGS>-I/usr/include/libgeotiff/</CPPFLAGS>
 					  </environmentVariables>
 			          <executable>./configure</executable>
 			          <arguments>
@@ -113,7 +113,7 @@
 		            </goals>
 		            <configuration>
 		            	<environmentVariables>
-					  <CPPFLAGS>/usr/include/libgeotiff/</CPPFLAGS>
+					  <CPPFLAGS>-I/usr/include/libgeotiff/</CPPFLAGS>
 					  </environmentVariables>
 			          <executable>make</executable>
 			          <workingDirectory>${project.build.directory}/gdal</workingDirectory>
