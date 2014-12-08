@@ -78,6 +78,9 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
+		            	<environmentVariables>
+					  <CPPFLAGS>/usr/include/libgeotiff/</CPPFLAGS>
+					  </environmentVariables>
 			          <executable>cp</executable>
 			          <arguments>
 			          	<argument>-pr</argument>
