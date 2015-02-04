@@ -309,7 +309,7 @@
 								<source>
 									<location>${project.build.directory}/gdal/swig/csharp</location>
 									<includes>
-										<includes>*.dll*</include>
+										<include>*.dll*</include>
 									</includes>
 								</source>
 							</sources>
