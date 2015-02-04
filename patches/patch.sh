@@ -10,6 +10,6 @@ GDAL_CSHARP_DIR=$2
 patch -i $PATCH_DIR/OgrPINVOKE.cs.patch $GDAL_CSHARP_DIR/ogr/OgrPINVOKE.cs
 patch -i $PATCH_DIR/OsrPINVOKE.cs.patch $GDAL_CSHARP_DIR/osr/OsrPINVOKE.cs
 patch -i $PATCH_DIR/GdalPINVOKE.cs.patch $GDAL_CSHARP_DIR/gdal/GdalPINVOKE.cs
-patch -i $PATCH_DIR/GNUMakefile.patch $GDAL_CSHARP_DIR/GNUMakefile
+patch -i $PATCH_DIR/GNUMakefile.patch $GDAL_CSHARP_DIR/GNUmakefile
 
 exit 0
