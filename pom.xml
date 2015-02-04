@@ -54,7 +54,7 @@
 	                    <configuration>
 	                        <tasks>
 	                            <delete dir="${project.build.directory}/staged"/>
-	                            <mkdir dir="${project.build.directory}/staged/usr/lib"/>
+	                            <mkdir dir="${project.build.directory}/staged/usr/lib64"/>
 	                        </tasks>
 	                    </configuration>
 	                    <goals>
@@ -98,6 +98,7 @@
 			          <executable>./configure</executable>
 			          <arguments>
 			          	<argument>--prefix=/usr</argument>
+			          	<argument>--libdir=/usr/lib64</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal</workingDirectory>
 			        </configuration>
@@ -206,7 +207,7 @@
 			          	<argument>/usr/bin/install</argument>
 			          	<argument>-c</argument>
 			          	<argument>libgdalconstcsharp.la</argument>
-			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
@@ -224,7 +225,7 @@
 			          	<argument>/usr/bin/install</argument>
 			          	<argument>-c</argument>
 			          	<argument>libgdalcsharp.la</argument>
-			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
@@ -242,7 +243,7 @@
 			          	<argument>/usr/bin/install</argument>
 			          	<argument>-c</argument>
 			          	<argument>libogrcsharp.la</argument>
-			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
@@ -260,7 +261,7 @@
 			          	<argument>/usr/bin/install</argument>
 			          	<argument>-c</argument>
 			          	<argument>libosrcsharp.la</argument>
-			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
@@ -300,11 +301,11 @@
 					<autoRequires>false</autoRequires>
 					<mappings>
 						<mapping>
-							<directory>/usr/lib</directory>
+							<directory>/usr/lib64</directory>
 							<filemode>0755</filemode>
 							<sources>
 								<source>
-									<location>${project.build.directory}/staged/usr/lib</location>
+									<location>${project.build.directory}/staged/usr/lib64</location>
 								</source>
 							</sources>
 						</mapping>
