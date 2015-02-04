@@ -2,12 +2,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.terradue</groupId>
-		<artifactId>t2-parent</artifactId>
-		<version>13</version>
-	</parent>
-
 	<groupId>com.terradue.scoop</groupId>
 	<artifactId>gdal-csharp</artifactId>
 	<version>1.7.3.2</version>
@@ -214,12 +208,5 @@
 		    </plugin>
 		</plugins>
 	</build>
-
-
-	<scm>
-		<url>https://gateway.terradue.com/repo/products/sugar/DotNetGDALNative</url>
-		<connection>scm:svn:https://gateway.terradue.com/repo/products/sugar/DotNetGDALNative</connection>
-		<developerConnection>scm:svn:https://gateway.terradue.com/repo/products/sugar/DotNetGDALNative</developerConnection>
-	</scm>
 
 </project>
