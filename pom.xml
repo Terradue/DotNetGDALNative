@@ -94,7 +94,7 @@
 					  </environmentVariables>
 			          <executable>./configure</executable>
 			          <arguments>
-			          	<argument>--prefix=${project.build.directory}/staged</argument>
+			          	<argument>--prefix=/usr</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal</workingDirectory>
 			        </configuration>
