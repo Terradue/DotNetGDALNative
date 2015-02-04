@@ -294,13 +294,13 @@
 					<name>${project.artifactId}</name>
 					<defaultUsername>root</defaultUsername>
 					<defaultGroupname>root</defaultGroupname>
-					<defaultDirmode>755</defaultDirmode>
-					<defaultFilemode>644</defaultFilemode>
+					<defaultDirmode>0755</defaultDirmode>
+					<defaultFilemode>0644</defaultFilemode>
 					<needarch>true</needarch>
 					<mappings>
 						<mapping>
 							<directory>/usr/lib</directory>
-							<filemode>755</filemode>
+							<filemode>0755</filemode>
 							<sources>
 								<source>
 									<location>${project.build.directory}/staged/usr/lib</location>
@@ -309,7 +309,7 @@
 						</mapping>
 						<mapping>
 							<directory>/usr/lib/mono</directory>
-							<filemode>755</filemode>
+							<filemode>0755</filemode>
 							<sources>
 								<source>
 									<location>${project.build.directory}/gdal/swig/csharp</location>
