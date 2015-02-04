@@ -205,6 +205,7 @@
 			          	<argument>libgdalconstcsharp.la</argument>
 			          	<argument>${project.build.directory}/staged/usr/lib</argument>
 			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
 		          </execution>
 		          <execution>
@@ -222,6 +223,7 @@
 			          	<argument>libgdalcsharp.la</argument>
 			          	<argument>${project.build.directory}/staged/usr/lib</argument>
 			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
 		          </execution>
 		          <execution>
@@ -239,6 +241,7 @@
 			          	<argument>libogrcsharp.la</argument>
 			          	<argument>${project.build.directory}/staged/usr/lib</argument>
 			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
 		          </execution>
 		          <execution>
@@ -256,6 +259,22 @@
 			          	<argument>libosrcsharp.la</argument>
 			          	<argument>${project.build.directory}/staged/usr/lib</argument>
 			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>copy-gdal-dlls</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>cp</executable>
+			          <arguments>
+			          	<argument>*.dll*</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib/csharp</argument>
+			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
 		          </execution>
 		          <!--<execution>
