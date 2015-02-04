@@ -262,21 +262,6 @@
 			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
 		          </execution>
-		          <execution>
-		          	<id>copy-gdal-dlls</id>
-					<phase>prepare-package</phase>
-		            <goals>
-		              <goal>exec</goal>
-		            </goals>
-		            <configuration>
-			          <executable>cp</executable>
-			          <arguments>
-			          	<argument>*.dll*</argument>
-			          	<argument>${project.build.directory}/staged/usr/lib/csharp</argument>
-			          </arguments>
-			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
-			        </configuration>
-		          </execution>
 		          <!--<execution>
 		          	<id>nuget-pack</id>
 					<phase>package</phase>
@@ -314,6 +299,18 @@
 							<sources>
 								<source>
 									<location>${project.build.directory}/staged/usr/lib</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/usr/lib/mono</directory>
+							<filemode>755</filemode>
+							<sources>
+								<source>
+									<location>${project.build.directory}/gdal/swig/csharp</location>
+									<includes>
+										<includes>*.dll*</include>
+									</includes>
 								</source>
 							</sources>
 						</mapping>
