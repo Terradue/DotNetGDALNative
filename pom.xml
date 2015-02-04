@@ -297,6 +297,7 @@
 					<defaultDirmode>0755</defaultDirmode>
 					<defaultFilemode>0644</defaultFilemode>
 					<needarch>true</needarch>
+					<autoRequires>false</autoRequires>
 					<mappings>
 						<mapping>
 							<directory>/usr/lib</directory>
