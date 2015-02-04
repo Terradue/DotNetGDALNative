@@ -51,7 +51,7 @@
 	                    <configuration>
 	                        <tasks>
 	                            <delete dir="${project.build.directory}/staged"/>
-	                            <mkdir dir="${project.build.directory}/staged"/>
+	                            <mkdir dir="${project.build.directory}/staged/usr/lib"/>
 	                        </tasks>
 	                    </configuration>
 	                    <goals>
@@ -191,6 +191,74 @@
 			        </configuration>
 		          </execution>
 		          <execution>
+		          	<id>intall-lib-gdalconstcsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libgdalconstcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          </arguments>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>intall-lib-gdalsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libgdalcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          </arguments>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>intall-lib-ogrcsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libogrcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          </arguments>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>intall-lib-osrcsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libosrcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib</argument>
+			          </arguments>
+			        </configuration>
+		          </execution>
+		          <!--<execution>
 		          	<id>nuget-pack</id>
 					<phase>package</phase>
 		            <goals>
@@ -203,9 +271,42 @@
 			          </arguments>
 			          <workingDirectory>${project.build.directory}</workingDirectory>
 			        </configuration>
-		          </execution>
+		          </execution>-->
 		        </executions>
 		    </plugin>
+		    <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<configuration>
+					<copyright>2015, Terradue</copyright>
+					<distribution>Terradue 2015</distribution>
+					<group>scoop</group>
+					<packager>Terradue</packager>
+					<name>${project.artifactId}</name>
+					<defaultUsername>root</defaultUsername>
+					<defaultGroupname>root</defaultGroupname>
+					<defaultDirmode>755</defaultDirmode>
+					<defaultFilemode>644</defaultFilemode>
+					<needarch>true</needarch>
+					<mappings>
+						<mapping>
+							<directory>/usr/lib</directory>
+							<filemode>755</filemode>
+							<sources>
+								<source>
+									<location>${project.build.directory}/staged/usr/lib</location>
+								</source>
+							</sources>
+						</mapping>
+					</mappings>
+					<provides>
+						<provide>${project.artifactId}</provide>
+					</provides>
+					<requires>
+						<require>gdal = 1.7.3</require>
+					</requires>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
