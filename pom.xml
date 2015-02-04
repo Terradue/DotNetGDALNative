@@ -5,7 +5,7 @@
 	<groupId>com.terradue.scoop</groupId>
 	<artifactId>gdal-csharp</artifactId>
 	<version>1.7.3</version>
-	<packaging>pom</packaging>
+	<packaging>rpm</packaging>
 
 	<dependencies>
 	</dependencies>
