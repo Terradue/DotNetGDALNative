@@ -71,7 +71,6 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
-		            	
 			          <executable>cp</executable>
 			          <arguments>
 			          	<argument>-pr</argument>
