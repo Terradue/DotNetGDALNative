@@ -54,9 +54,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Terradue.GDAL.Native\Terradue.GDAL.Native.csproj">
+    <ProjectReference Include="..\Terradue.GDAL.Native\Terradue.GDAL.Native.Mono.csproj">
       <Project>{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}</Project>
-      <Name>Terradue.GDAL.Native</Name>
+      <Name>Terradue.GDAL.Native.Mono</Name>
     </ProjectReference>
   </ItemGroup>
 </Project>

@@ -266,7 +266,7 @@
 			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
 			        </configuration>
 		          </execution>
-		          <!--<execution>
+		          <execution>
 		          	<id>nuget-pack</id>
 					<phase>package</phase>
 		            <goals>
@@ -279,7 +279,7 @@
 			          </arguments>
 			          <workingDirectory>${project.build.directory}</workingDirectory>
 			        </configuration>
-		          </execution>-->
+		          </execution>
 		        </executions>
 		    </plugin>
 		    <plugin>
