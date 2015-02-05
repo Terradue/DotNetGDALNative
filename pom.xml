@@ -32,14 +32,14 @@
 		                  <directory>${basedir}</directory>
 		                  <filtering>true</filtering>
 		                  <includes>
-          					<include>Terradue.GDAL.Native.nuspec</include>
-        				  </includes>
+	      					<include>Terradue.GDAL.Native.nuspec</include>
+	    				  </includes>
 		                </resource>
 		              </resources>              
 		            </configuration>            
 		          </execution>
 		        </executions>
-		      </plugin>
+		    </plugin>
 			<plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-antrun-plugin</artifactId>
