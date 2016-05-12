@@ -4,7 +4,7 @@
 
 	<groupId>com.terradue.scoop</groupId>
 	<artifactId>gdal-csharp</artifactId>
-	<version>1.7.3</version>
+	<version>2.1</version>
 	<packaging>rpm</packaging>
 
 	<properties>
@@ -281,7 +281,7 @@
 				<groupId>org.codehaus.mojo</groupId>
 				<artifactId>rpm-maven-plugin</artifactId>
 				<extensions>true</extensions>
-				<version>2.1-alpha-4</version>
+				<version>2.1.5</version>
 				<configuration>
 					<copyright>2015, Terradue</copyright>
 					<distribution>Terradue 2015</distribution>
@@ -321,7 +321,7 @@
 						<provide>${project.artifactId}</provide>
 					</provides>
 					<requires>
-						<require>gdal = 1.7.3</require>
+						<require>gdal = 2.1</require>
 					</requires>
 				</configuration>
 			</plugin>
