@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terradue.GDAL.Native", "Terradue.GDAL.Native\Terradue.GDAL.Native.csproj", "{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terradue.GDAL.Native.Mono", "Terradue.GDAL.Native\Terradue.GDAL.Native.Mono.csproj", "{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Terradue.GDAL.Native.Tests", "Terradue.GDAL.Native.Tests\Terradue.GDAL.Native.Tests.csproj", "{7519AADD-07F3-47EE-A258-1A3DF39FD7A3}"
 EndProject
@@ -19,8 +19,5 @@ Global
 		{7519AADD-07F3-47EE-A258-1A3DF39FD7A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7519AADD-07F3-47EE-A258-1A3DF39FD7A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7519AADD-07F3-47EE-A258-1A3DF39FD7A3}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(MonoDevelopProperties) = preSolution
-		StartupItem = Terradue.GDAL.Native.Tests\Terradue.GDAL.Native.Tests.csproj
 	EndGlobalSection
 EndGlobal

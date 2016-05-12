@@ -5,8 +5,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{3111B3D9-7AC4-4E13-B58C-C52B470A64AB}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>Terradue.GDAL.Native</RootNamespace>
-    <AssemblyName>Terradue.GDAL.Native</AssemblyName>
+    <RootNamespace>Terradue.GDAL.Native.Mono</RootNamespace>
+    <AssemblyName>Terradue.GDAL.Native.Mono</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">

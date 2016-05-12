@@ -2,22 +2,15 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<parent>
-		<groupId>com.terradue</groupId>
-		<artifactId>t2-parent</artifactId>
-		<version>13</version>
-	</parent>
-
 	<groupId>com.terradue.scoop</groupId>
 	<artifactId>gdal-csharp</artifactId>
-	<version>1.11.1</version>
-	<packaging>pom</packaging>
-
-	<dependencies>
-	</dependencies>
+	<version>1.7.3</version>
+	<packaging>rpm</packaging>
 
 	<properties>
-		<srcURLSuffix>tar.gz</srcURLSuffix>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.build.resourceEncoding>UTF-8</project.build.resourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
 
 	<build>
@@ -39,14 +32,14 @@
 		                  <directory>${basedir}</directory>
 		                  <filtering>true</filtering>
 		                  <includes>
-          					<include>Terradue.GDAL.Native.nuspec</include>
-        				  </includes>
+	      					<include>Terradue.GDAL.Native.nuspec</include>
+	    				  </includes>
 		                </resource>
 		              </resources>              
 		            </configuration>            
 		          </execution>
 		        </executions>
-		      </plugin>
+		    </plugin>
 			<plugin>
 	            <groupId>org.apache.maven.plugins</groupId>
 	            <artifactId>maven-antrun-plugin</artifactId>
@@ -57,7 +50,7 @@
 	                    <configuration>
 	                        <tasks>
 	                            <delete dir="${project.build.directory}/staged"/>
-	                            <mkdir dir="${project.build.directory}/staged"/>
+	                            <mkdir dir="${project.build.directory}/staged/usr/lib64"/>
 	                        </tasks>
 	                    </configuration>
 	                    <goals>
@@ -94,9 +87,13 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
+		            	<environmentVariables>
+					  <CPPFLAGS>-I/usr/include/libgeotiff/</CPPFLAGS>
+					  </environmentVariables>
 			          <executable>./configure</executable>
 			          <arguments>
-			          	<argument>--prefix=${project.build.directory}/staged</argument>
+			          	<argument>--prefix=/usr</argument>
+			          	<argument>--libdir=/usr/lib64</argument>
 			          </arguments>
 			          <workingDirectory>${project.build.directory}/gdal</workingDirectory>
 			        </configuration>
@@ -108,6 +105,9 @@
 		              <goal>exec</goal>
 		            </goals>
 		            <configuration>
+		            	<environmentVariables>
+					  <CPPFLAGS>-I/usr/include/libgeotiff/</CPPFLAGS>
+					  </environmentVariables>
 			          <executable>make</executable>
 			          <workingDirectory>${project.build.directory}/gdal</workingDirectory>
 			        </configuration>
@@ -190,6 +190,78 @@
 			        </configuration>
 		          </execution>
 		          <execution>
+		          	<id>intall-lib-gdalconstcsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libgdalconstcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
+			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>intall-lib-gdalsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libgdalcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
+			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>intall-lib-ogrcsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libogrcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
+			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
+		          	<id>intall-lib-osrcsharp</id>
+					<phase>prepare-package</phase>
+		            <goals>
+		              <goal>exec</goal>
+		            </goals>
+		            <configuration>
+			          <executable>libtool</executable>
+			          <arguments>
+			          	<argument>--mode=install</argument>
+			          	<argument>/usr/bin/install</argument>
+			          	<argument>-c</argument>
+			          	<argument>libosrcsharp.la</argument>
+			          	<argument>${project.build.directory}/staged/usr/lib64</argument>
+			          </arguments>
+			          <workingDirectory>${project.build.directory}/gdal/swig/csharp</workingDirectory>
+			        </configuration>
+		          </execution>
+		          <execution>
 		          	<id>nuget-pack</id>
 					<phase>package</phase>
 		            <goals>
@@ -205,14 +277,54 @@
 		          </execution>
 		        </executions>
 		    </plugin>
+		    <plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>rpm-maven-plugin</artifactId>
+				<extensions>true</extensions>
+				<version>2.1-alpha-4</version>
+				<configuration>
+					<copyright>2015, Terradue</copyright>
+					<distribution>Terradue 2015</distribution>
+					<group>scoop</group>
+					<packager>Terradue</packager>
+					<name>${project.artifactId}</name>
+					<defaultUsername>root</defaultUsername>
+					<defaultGroupname>root</defaultGroupname>
+					<defaultDirmode>0755</defaultDirmode>
+					<defaultFilemode>0644</defaultFilemode>
+					<needarch>true</needarch>
+					<autoRequires>false</autoRequires>
+					<mappings>
+						<mapping>
+							<directory>/usr/lib64</directory>
+							<filemode>0755</filemode>
+							<sources>
+								<source>
+									<location>${project.build.directory}/staged/usr/lib64</location>
+								</source>
+							</sources>
+						</mapping>
+						<mapping>
+							<directory>/usr/lib/mono</directory>
+							<filemode>0755</filemode>
+							<sources>
+								<source>
+									<location>${project.build.directory}/gdal/swig/csharp</location>
+									<includes>
+										<include>*.dll*</include>
+									</includes>
+								</source>
+							</sources>
+						</mapping>
+					</mappings>
+					<provides>
+						<provide>${project.artifactId}</provide>
+					</provides>
+					<requires>
+						<require>gdal = 1.7.3</require>
+					</requires>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
-
-
-	<scm>
-		<url>https://gateway.terradue.com/repo/products/sugar/DotNetGDALNative</url>
-		<connection>scm:svn:https://gateway.terradue.com/repo/products/sugar/DotNetGDALNative</connection>
-		<developerConnection>scm:svn:https://gateway.terradue.com/repo/products/sugar/DotNetGDALNative</developerConnection>
-	</scm>
-
 </project>

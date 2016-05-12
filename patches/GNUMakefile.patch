@@ -1,0 +1,19 @@
+--- ../../../../gdal/gdal/swig/csharp/GNUmakefile	2015-02-04 12:21:30.993663696 +0100
++++ GNUmakefile	2015-02-04 16:09:17.845315056 +0100
+@@ -12,6 +12,7 @@
+ LINK = $(LD_SHARED)
+ LINK_EXTRAFLAGS =
+ OBJ_EXT = o
++LDFLAGS = -lgdal
+ ifeq ($(HAVE_LIBTOOL),yes)
+ LINK = $(LD)
+ LINK_EXTRAFLAGS = -rpath $(INST_LIB) -no-undefined -version-info $(LIBGDAL_CURRENT):$(LIBGDAL_REVISION):$(LIBGDAL_AGE)
+@@ -46,7 +47,7 @@
+ 	@echo "No installation to be done"
+
+ $(CSHARP_MODULES): lib%csharp.$(SO_EXT): %_wrap.$(OBJ_EXT)
+-	$(LINK) $(LDFLAGS) $(CONFIG_LIBS) $< -o $@ $(LINK_EXTRAFLAGS)
++	$(LINK) $(LDFLAGS) $< -o $@ $(LINK_EXTRAFLAGS)
+ 	rm -rf $*_csharp.dll.config
+ 	echo "<configuration>" >> $*_csharp.dll.config
+ 	echo "<dllmap dll=\""$*"_wrap\" target=\""$*csharp"\" />" >> $*_csharp.dll.config
