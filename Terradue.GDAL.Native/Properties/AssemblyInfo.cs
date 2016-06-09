@@ -5,13 +5,13 @@ using System.Runtime.CompilerServices;
 
 \namespace Terradue.GDAL.Native
 @{
-    DotNetGDALNative Software Package
+    Terradue.GDAL.Native Software Package provides with bindings to GDAL native functions in .NET
 
-    \xrefitem sw_version "Versions" "Software Package Version" 1.0.0
+    \xrefitem sw_version "Versions" "Software Package Version" 2.1.0
 
     \xrefitem sw_link "Link" "Software Package Link" [DotNetGDALNative](https://github.com/Terradue/DotNetGDALNative)
 
-    \xrefitem sw_license "License" "Software License" [GPLv3](https://raw.githubusercontent.com/Terradue/DotNetGDALNative/master/LICENSE)
+    \xrefitem sw_license "License" "Software License" [AGPL](https://raw.githubusercontent.com/Terradue/DotNetGDALNative/master/LICENSE)
 
     \ingroup Data
 @}
@@ -34,8 +34,8 @@ using System.Runtime.CompilerServices;
 // The form "{Major}.{Minor}.*" will automatically update the build and revision,
 // and "{Major}.{Minor}.{Build}.*" will update just the revision.
 
-[assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyInformationalVersion("1.0.0")]
+[assembly: AssemblyVersion("2.1.0.*")]
+[assembly: AssemblyInformationalVersion("2.1.0")]
 
 // The following attributes are used to specify the signing key for the assembly,
 // if desired. See the Mono documentation for more information about signing.
