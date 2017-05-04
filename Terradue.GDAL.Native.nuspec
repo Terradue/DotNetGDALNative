@@ -13,7 +13,7 @@
     <tags>Mono GDAL Ogr Osr Geo</tags>
   </metadata>
   <files>
-    <file src="gdal/swig/csharp/*.dll*" target="lib/net40/" />
+    <file src="gdal/swig/csharp/*.dll*" target="lib/net45/" />
     <file src="bin/Terradue.GDAL.Native.dll" target="lib/net40/Terradue.GDAL.Native.Mono.dll" />
   </files>
 

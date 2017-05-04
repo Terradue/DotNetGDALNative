@@ -18,6 +18,8 @@ namespace Terradue.GDAL.Native.Tests {
 
         [Test()]
         public void TestCase() {
+
+            GDALInfo.Main(new string[]{ "L2_of_GUF04_DLR_v01_e010_n45_e015_n40_OGR04.tif"});
         }
     }
 }
